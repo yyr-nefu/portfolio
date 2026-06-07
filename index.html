@@ -376,18 +376,27 @@ tailwind.config = {
     </div>
     <div class="reveal max-w-2xl mx-auto">
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-7">
-        <a href="mailto:yangyirong@email.com" class="group flex flex-col items-center gap-3 bg-white/60 backdrop-blur-sm rounded-2xl p-5 border border-space-200/40 hover:border-quiet-300/40 transition-all duration-300 hover:shadow-sm">
-          <div class="w-10 h-10 rounded-xl bg-quiet-50 flex items-center justify-center group-hover:bg-quiet-100 transition-colors"><iconify-icon icon="solar:letter-linear" width="18" class="text-quiet-500"></iconify-icon></div>
-          <div class="text-center"><div class="text-xs text-space-400 mb-0.5">邮箱</div><div class="text-sm font-medium text-space-700">yangyirong@email.com</div></div>
-        </a>
-        <a href="tel:13800138000" class="group flex flex-col items-center gap-3 bg-white/60 backdrop-blur-sm rounded-2xl p-5 border border-space-200/40 hover:border-lime-300/40 transition-all duration-300 hover:shadow-sm">
-          <div class="w-10 h-10 rounded-xl bg-lime-50 flex items-center justify-center group-hover:bg-lime-100 transition-colors"><iconify-icon icon="solar:phone-linear" width="18" class="text-lime-500"></iconify-icon></div>
-          <div class="text-center"><div class="text-xs text-space-400 mb-0.5">电话</div><div class="text-sm font-medium text-space-700">138-0013-8000</div></div>
-        </a>
-        <a href="#" class="group flex flex-col items-center gap-3 bg-white/60 backdrop-blur-sm rounded-2xl p-5 border border-space-200/40 hover:border-gold-300/40 transition-all duration-300 hover:shadow-sm">
-          <div class="w-10 h-10 rounded-xl bg-gold-50 flex items-center justify-center group-hover:bg-gold-100 transition-colors"><iconify-icon icon="solar:chat-round-dots-linear" width="18" class="text-gold-400"></iconify-icon></div>
-          <div class="text-center"><div class="text-xs text-space-400 mb-0.5">微信</div><div class="text-sm font-medium text-space-700">yangyirong_pm</div></div>
-        </a>
+        <button onclick="copyContact('yirong_yang@163.com', this)" class="group flex flex-col items-center gap-3 bg-white/60 backdrop-blur-sm rounded-2xl p-5 border border-space-200/40 hover:border-quiet-300/40 transition-all duration-300 hover:shadow-sm cursor-pointer w-full">
+          <div class="w-10 h-10 rounded-xl bg-quiet-50 flex items-center justify-center group-hover:bg-quiet-100 transition-colors relative">
+            <iconify-icon icon="solar:letter-linear" width="18" class="text-quiet-500"></iconify-icon>
+            <iconify-icon icon="solar:copy-linear" width="12" class="text-quiet-400 absolute -bottom-0.5 -right-0.5 opacity-0 group-hover:opacity-100 transition-opacity"></iconify-icon>
+          </div>
+          <div class="text-center"><div class="text-xs text-space-400 mb-0.5">邮箱</div><div class="text-sm font-medium text-space-700">yirong_yang@163.com</div></div>
+        </button>
+        <button onclick="copyContact('18093587560', this)" class="group flex flex-col items-center gap-3 bg-white/60 backdrop-blur-sm rounded-2xl p-5 border border-space-200/40 hover:border-lime-300/40 transition-all duration-300 hover:shadow-sm cursor-pointer w-full">
+          <div class="w-10 h-10 rounded-xl bg-lime-50 flex items-center justify-center group-hover:bg-lime-100 transition-colors relative">
+            <iconify-icon icon="solar:phone-linear" width="18" class="text-lime-500"></iconify-icon>
+            <iconify-icon icon="solar:copy-linear" width="12" class="text-lime-500 absolute -bottom-0.5 -right-0.5 opacity-0 group-hover:opacity-100 transition-opacity"></iconify-icon>
+          </div>
+          <div class="text-center"><div class="text-xs text-space-400 mb-0.5">电话</div><div class="text-sm font-medium text-space-700">18093587560</div></div>
+        </button>
+        <button onclick="copyContact('18093587560', this)" class="group flex flex-col items-center gap-3 bg-white/60 backdrop-blur-sm rounded-2xl p-5 border border-space-200/40 hover:border-gold-300/40 transition-all duration-300 hover:shadow-sm cursor-pointer w-full">
+          <div class="w-10 h-10 rounded-xl bg-gold-50 flex items-center justify-center group-hover:bg-gold-100 transition-colors relative">
+            <iconify-icon icon="solar:chat-round-dots-linear" width="18" class="text-gold-400"></iconify-icon>
+            <iconify-icon icon="solar:copy-linear" width="12" class="text-gold-400 absolute -bottom-0.5 -right-0.5 opacity-0 group-hover:opacity-100 transition-opacity"></iconify-icon>
+          </div>
+          <div class="text-center"><div class="text-xs text-space-400 mb-0.5">微信</div><div class="text-sm font-medium text-space-700">18093587560</div></div>
+        </button>
       </div>
       <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
         <button onclick="showToast('简历下载链接已复制')" class="btn-primary w-full sm:w-auto justify-center"><iconify-icon icon="solar:download-minimalistic-linear" width="15"></iconify-icon>下载完整简历</button>
@@ -443,6 +452,12 @@ const obs = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersectin
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 const nav = document.getElementById('navbar');
 window.addEventListener('scroll', () => { nav.style.boxShadow = scrollY > 80 ? '0 1px 20px rgba(42,50,65,0.05)' : 'none'; });
+function copyContact(text, btn) {
+  navigator.clipboard.writeText(text).then(() => {
+    const label = btn.querySelector('.text-center .text-xs').textContent;
+    showToast('已复制：' + text);
+  }).catch(() => showToast('复制失败，请手动复制'));
+}
 function showToast(m) {
   const t = document.getElementById('toast');
   document.getElementById('toast-text').textContent = m;
