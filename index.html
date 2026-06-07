@@ -285,54 +285,18 @@ tailwind.config = {
     <!-- 项目2 -->
     <div class="reveal project-card bg-white/70 backdrop-blur-sm rounded-2xl overflow-hidden mb-5">
       <div class="grid grid-cols-1 lg:grid-cols-5">
-        <div class="lg:col-span-2 relative overflow-hidden bg-gradient-to-br from-lime-600 to-space-800 min-h-[240px]">
-          <img src="https://picsum.photos/seed/ai-news-push/800/600.jpg" alt="" class="absolute inset-0 w-full h-full object-cover opacity-20 mix-blend-luminosity">
-          <div class="absolute inset-0 flex items-center justify-center">
-            <div class="text-center">
-              <div class="w-13 h-13 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/15 flex items-center justify-center mx-auto mb-2.5">
-                <iconify-icon icon="solar:chat-round-dots-bold" width="22" class="text-white/80"></iconify-icon>
-              </div>
-              <span class="text-white/50 text-[10px] tracking-[0.15em] uppercase font-medium">Project 02</span>
-            </div>
-          </div>
-          <svg class="absolute bottom-0 left-0 w-full h-14 opacity-10" viewBox="0 0 400 60" fill="none">
-            <path d="M0 30 Q100 55 200 20 Q300 0 400 45" class="flow-line" stroke="white" stroke-width="1" style="animation-delay:-9s"/>
-          </svg>
+        <div class="lg:col-span-2 relative overflow-hidden min-h-[240px]">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop" alt="" class="absolute inset-0 w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-space-900/50 via-transparent to-transparent"></div>
+          <span class="absolute bottom-4 left-5 text-white/60 text-[10px] tracking-[0.15em] uppercase font-medium">Project 02</span>
         </div>
         <div class="lg:col-span-3 p-7 md:p-9">
           <div class="flex items-center gap-2 mb-3">
-            <span class="tag tag-lime">AI资讯</span>
-            <span class="tag tag-blue">智能问答</span>
+            <span class="tag tag-lime">飞书</span>
+            <span class="tag tag-blue">Dify</span>
           </div>
           <h3 class="text-lg md:text-xl font-semibold text-space-900 tracking-[-0.02em] mb-2">AI资讯推送与问答助手</h3>
           <p class="text-sm text-space-400 leading-relaxed mb-5">基于大模型的个性化资讯聚合与智能问答产品。通过用户兴趣画像与RAG知识增强，实现精准资讯推送、多轮对话式问答、内容摘要生成。</p>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mb-5">
-            <div class="flex items-start gap-2">
-              <div class="w-5 h-5 rounded-md bg-lime-50 flex items-center justify-center flex-shrink-0 mt-0.5"><iconify-icon icon="solar:bell-linear" width="11" class="text-lime-500"></iconify-icon></div>
-              <div><div class="text-xs font-medium text-space-700">个性化推送</div><div class="text-xs text-space-400">兴趣画像精准分发</div></div>
-            </div>
-            <div class="flex items-start gap-2">
-              <div class="w-5 h-5 rounded-md bg-quiet-50 flex items-center justify-center flex-shrink-0 mt-0.5"><iconify-icon icon="solar:chat-round-dots-linear" width="11" class="text-quiet-500"></iconify-icon></div>
-              <div><div class="text-xs font-medium text-space-700">多轮问答</div><div class="text-xs text-space-400">对话式检索与追问</div></div>
-            </div>
-            <div class="flex items-start gap-2">
-              <div class="w-5 h-5 rounded-md bg-quiet-50 flex items-center justify-center flex-shrink-0 mt-0.5"><iconify-icon icon="solar:document-text-linear" width="11" class="text-quiet-500"></iconify-icon></div>
-              <div><div class="text-xs font-medium text-space-700">智能摘要</div><div class="text-xs text-space-400">长文提炼要点</div></div>
-            </div>
-            <div class="flex items-start gap-2">
-              <div class="w-5 h-5 rounded-md bg-gold-50 flex items-center justify-center flex-shrink-0 mt-0.5"><iconify-icon icon="solar:graph-up-linear" width="11" class="text-gold-400"></iconify-icon></div>
-              <div><div class="text-xs font-medium text-space-700">效果迭代</div><div class="text-xs text-space-400">点击率+45%</div></div>
-            </div>
-          </div>
-          <div class="flex items-center gap-5 pt-4 border-t border-space-200/40">
-            <div><div class="data-highlight text-xl tracking-tight">30w+</div><div class="text-[9px] text-space-400 mt-0.5">日活用户</div></div>
-            <div class="w-px h-7 bg-space-200/50"></div>
-            <div><div class="data-highlight text-xl tracking-tight">+45%</div><div class="text-[9px] text-space-400 mt-0.5">推送点击率</div></div>
-            <div class="w-px h-7 bg-space-200/50"></div>
-            <div><div class="data-highlight text-xl tracking-tight">92%</div><div class="text-[9px] text-space-400 mt-0.5">问答准确率</div></div>
-            <div class="w-px h-7 bg-space-200/50"></div>
-            <div><div class="data-highlight text-xl tracking-tight">1.5s</div><div class="text-[9px] text-space-400 mt-0.5">平均响应</div></div>
-          </div>
           <div class="flex flex-wrap gap-2.5 pt-5 border-t border-space-200/40">
             <a href="assets/轻影-使用场景-推荐.png" target="_blank" class="sub-nav-item"><iconify-icon icon="solar:album-linear"></iconify-icon>使用场景：智能推荐</a>
             <a href="assets/轻影-使用场景-问答.png" target="_blank" class="sub-nav-item"><iconify-icon icon="solar:chat-round-dots-linear"></iconify-icon>使用场景：智能问答</a>
