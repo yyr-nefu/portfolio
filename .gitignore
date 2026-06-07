@@ -1,0 +1,7 @@
+# 忽略所有 GymViz 项目文件，只追踪作品集
+*
+!index.html
+!README.md
+!assets/
+!assets/*
+!.gitignore
